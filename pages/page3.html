@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="https://unpkg.com/nanogallery2/dist/css/nanogallery2.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/nanogallery2/dist/jquery.nanogallery2.min.js"></script>
+    <style>
+        body {
+            font-family: "Courier New", Courier, monospace;
+            background-color: #transparent;
+            color: white;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        #nanogallery {
+            width: 80%;
+            max-width: 1200px;
+            margin: auto;
+        }
+        h2 {
+            font-size: 2em;
+            transform: translateY(100px);
+        }
+    </style>
+</head>
+<body>
+    <h2>Galerie Foto 📸</h2>
+    <div id="nanogallery"></div>
+    <script>
+        function Demo_Mosaic_1() {
+            const images = [];
+            for (let i = 1; i <= 14; i++) {
+                images.push({
+                    src: `../res/image${i}.jpg`,
+                    srct: `../res/image${i}.jpg`,
+                    title: `Image ${i}`
+                });
+            }
+            jQuery("#nanogallery").nanogallery2({
+                items: images,
+                galleryMosaic : [
+                    { w: 2, h: 2, c: 1, r: 1 },
+                    { w: 1, h: 1, c: 3, r: 1 },
+                    { w: 1, h: 1, c: 3, r: 2 },
+                    { w: 1, h: 2, c: 4, r: 1 },
+                    { w: 2, h: 1, c: 5, r: 1 },
+                    { w: 2, h: 2, c: 5, r: 2 },
+                    { w: 1, h: 1, c: 4, r: 3 },
+                    { w: 2, h: 1, c: 2, r: 3 },
+                    { w: 1, h: 2, c: 1, r: 3 },
+                    { w: 1, h: 1, c: 2, r: 4 },
+                    { w: 2, h: 1, c: 3, r: 4 },
+                    { w: 1, h: 1, c: 5, r: 4 },
+                    { w: 1, h: 1, c: 6, r: 4 }
+                ],
+                galleryMosaicXS : [
+                    { w: 2, h: 2, c: 1, r: 1 },
+                    { w: 1, h: 1, c: 3, r: 1 },
+                    { w: 1, h: 1, c: 3, r: 2 },
+                    { w: 1, h: 2, c: 1, r: 3 },
+                    { w: 2, h: 1, c: 2, r: 3 },
+                    { w: 1, h: 1, c: 2, r: 4 },
+                    { w: 1, h: 1, c: 3, r: 4 }
+                ],
+                galleryMosaicSM : [
+                    { w: 2, h: 2, c: 1, r: 1 },
+                    { w: 1, h: 1, c: 3, r: 1 },
+                    { w: 1, h: 1, c: 3, r: 2 },
+                    { w: 1, h: 2, c: 1, r: 3 },
+                    { w: 2, h: 1, c: 2, r: 3 },
+                    { w: 1, h: 1, c: 2, r: 4 },
+                    { w: 1, h: 1, c: 3, r: 4 }
+                ],
+                galleryMaxRows: 1,
+                galleryDisplayMode: 'rows',
+                gallerySorting: 'random',
+                thumbnailDisplayOrder: 'random',
+                thumbnailHeight: '180', thumbnailWidth: '220',
+                thumbnailAlignment: 'scaled',
+                thumbnailGutterWidth: 0, thumbnailGutterHeight: 0,
+                thumbnailBorderHorizontal: 0, thumbnailBorderVertical: 0,
+                thumbnailToolbarImage: null,
+                thumbnailToolbarAlbum: null,
+                thumbnailLabel: { display: false },
+                galleryDisplayTransitionDuration: 1500,
+                thumbnailDisplayTransition: 'imageSlideUp',
+                thumbnailDisplayTransitionDuration: 1200,
+                thumbnailDisplayTransitionEasing: 'easeInOutQuint',
+                thumbnailDisplayInterval: 60,
+                thumbnailBuildInit2: 'image_scale_1.15',
+                thumbnailHoverEffect2: 'thumbnail_scale_1.00_1.05_300|image_scale_1.15_1.00',
+                touchAnimation: true,
+                touchAutoOpenDelay: 500,
+                viewerToolbar: { display: false },
+                viewerTools: {
+                    topLeft: 'label',
+                    topRight: 'shareButton, rotateLeft, rotateRight, fullscreenButton, closeButton'
+                },
+                galleryTheme : { 
+                    thumbnail: { background: '#111' },
+                },
+                locationHash: true
+            });
+        }
+
+        $(document).ready(function() {
+            Demo_Mosaic_1();
+        });
+
+setTimeout(() => {
+    const elements = document.querySelectorAll('.nGY2GThumbnailCustomLayer');
+    let closeButton = null;
+
+    elements.forEach(element => {
+        element.addEventListener('click', function() {
+            window.location.href = '/pages/page3.html#';
+            window.parent.postMessage('disableScroll', '*');
+            closeButton = document.querySelector('.closeButton');
+            if (closeButton) {
+                closeButton.addEventListener('click', function() {
+                    window.parent.postMessage('enableScroll', '*');
+                });
+            }
+        });
+    });
+
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape' || event.key === 'Esc') {
+            window.parent.postMessage('enableScroll', '*');
+        }
+    });
+    
+}, 2000);
+    </script>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: transparent;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #ecf0f1;
+            font-family: "Courier New", Courier, monospace;
+        }
+        .carousel {
+            width: 100%;
+            max-width: 1200px;
+            padding: 20px;
+            box-sizing: border-box;
+            max-height: calc(100vh - 40px);
+            overflow: hidden;
+        }
+        .carousel-track {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-auto-rows: auto;
+            gap: 20px;
+        }
+        .image-container {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 2px solid white;
+        }
+        .image-container:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+        .image-container img {
+            width: 40%;
+            height: auto;
+            border-radius: 8px;
+            margin-right: 20px;
+        }
+        .image-container p {
+            margin: 0;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9em;
+            color: #ecf0f1;
+            line-height: 1.4;
+        }
+        .image-container p span {
+            display: block;
+            font-size: 1.1em;
+            font-weight: bold;
+        }
+        .image-container p .age::before {
+            font-size: 0.9em;
+            content: "Vârstă: ";
+            color: orange;
+        }
+        .image-container p .role::before {
+            font-size: 0.9em;
+            content: "Rol: ";
+            color: orange;
+        }
+        .image-container p .description {
+            margin-top: 5px;
+        }
+        .image-container p .quote {
+            margin-top: 5px;
+            font-size: 0.9em;
+            color: #bdc3c7;
+        }
+        h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Echipa Noastră 👥</h2>
+    <div class="carousel">
+        <div class="carousel-track">
+            <div class="image-container">
+                <img src="../res/member.png">
+                <p>
+                    <span>Elon Musk</span>
+                    <span class="age">53</span>
+                    <span class="role">Mentor</span>
+                    <span class="quote">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vel urna nec velit egestas." </span>
+                </p>
+            </div>
+            <div class="image-container">
+                <img src="../res/member.png">
+                <p>
+                    <span>Elon Musk</span>
+                    <span class="age">53</span>
+                    <span class="role">Mentor</span>
+                    <span class="quote">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vel urna nec velit egestas." </span>
+                </p>
+            </div>
+            <div class="image-container">
+                <img src="../res/member.png">
+                <p>
+                    <span>Elon Musk</span>
+                    <span class="age">53</span>
+                    <span class="role">Mentor</span>
+                    <span class="quote">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vel urna nec velit egestas." </span>
+                </p>
+            </div>
+            <div class="image-container">
+                <img src="../res/member.png">
+                <p>
+                    <span>Elon Musk</span>
+                    <span class="age">53</span>
+                    <span class="role">Mentor</span>
+                    <span class="quote">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vel urna nec velit egestas." </span>
+                </p>
+            </div>
+            <div class="image-container">
+                <img src="../res/member.png">
+                <p>
+                    <span>Elon Musk</span>
+                    <span class="age">53</span>
+                    <span class="role">Mentor</span>
+                    <span class="quote">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vel urna nec velit egestas." </span>
+                </p>
+            </div>
+            <div class="image-container">
+                <img src="../res/member.png">
+                <p>
+                    <span>Elon Musk</span>
+                    <span class="age">53</span>
+                    <span class="role">Mentor</span>
+                    <span class="quote">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vel urna nec velit egestas." </span>
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: transparent;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: "Courier New", Courier, monospace;
+            color: white;
+            line-height: 5px;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            column-gap: 80px;
+        }
+
+        .grid-item {
+            width: 250px;
+            height: 250px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .grid-item img {
+            max-width: 100%;
+            max-height: 100%;
+            opacity: 0.7;
+            transition: opacity 0.2s ease-in-out;
+        }
+
+        .grid-item img:hover {
+            opacity: 1;
+        }
+
+        h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Sponsori ❤️</h2>
+    <h3>PS: Vă iubim!</h3>
+    <div class="grid-container">
+        <div class="grid-item"><img src="/res/autonom.png" alt="Image 1"></div>
+        <div class="grid-item"><img src="/res/bizz.png" alt="Image 2"></div>
+        <div class="grid-item"><img src="/res/delta.webp" alt="Image 3"></div>
+        <div class="grid-item"><img src="/res/link.png" alt="Image 4"></div>
+        <div class="grid-item"><img src="/res/binar.png" alt="Image 5"></div>
+        <div class="grid-item"><img src="/res/indeco.png" alt="Image 6"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: transparent;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: white;
+            font-family: "Courier New", Courier, monospace;
+            font-size: 1.2em;
+            flex-direction: column;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        .monospace-text {
+            margin-top: 20px;
+        }
+        .button-container {
+            margin-top: 20px;
+        }
+        .button-container button {
+            border-radius: 25px;
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+            margin: 0 10px;
+            font-family: "Courier New", Courier, monospace;
+            transition: transform 0.2s ease, background-color 0.2s ease;
+        }
+        .button-container button:active {
+            transform: scale(0.95);
+        }
+        .button-border {
+            background-color: transparent;
+            border: 2px solid white;
+            color: white;
+        }
+        .button-border:active {
+            background-color: white;
+            color: black;
+        }
+        .button-orange {
+            background-color: orange;
+            border: none;
+            color: black;
+        }
+        .button-orange:active {
+            background-color: darkorange;
+        }
+        .corner-images {
+            position: fixed;
+            top: 30px;
+            left: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .corner-images a {
+            display: block;
+        }
+        .corner-images img {
+            width: 30%;
+            height: auto;
+            margin: 5px 0;
+            opacity: 0.5;
+            transition: opacity 0.2s ease;
+        }
+        .corner-images img:hover {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="corner-images">
+        <a onclick="window.location.href='https://www.georgebaritiu.ro'"><img src="/res/ctgb.png" alt="Link 1"></a>
+        <a onclick="window.location.href='https://natieprineducatie.ro'"><img src="/res/npe.png" alt="Link 2" style="margin-left: 10px"></a>
+        <a onclick="window.location.href='https://www.firstinspires.org/robotics/ftc'"><img src="/res/ftc.png" alt="Link 3"></a>
+    </div>
+    <img src="/res/logo_big.png" style="max-width: 25%; height: auto; margin-bottom: -5%" alt="Big Logo">
+    <img src="/res/logo_small.png" style="max-width: 25%; height: auto; margin-bottom: -5%" alt="Small Logo">
+    <div class="monospace-text">🇷🇴 RO_179 🌐 #24310 📍Baia Mare</div>
+    <div class="monospace-text">We are a First Tech Challenge team from the Earth.</div>
+    <div class="monospace-text">Our slogan is: Sky is not the limit! 💫</div>
+    <br>
+    <div class="button-container">
+        <button class="button-border" onclick="scrollToPage(1)">🥞 Mai multe!</button>
+        <button class="button-orange" onclick="scrollToPage(5)">✏️ Scrie-ne!</button>
+    </div>
+
+    <script>
+        function scrollToPage(pageIndex) {
+            window.parent.postMessage({ action: 'scrollToPage', page: pageIndex }, '*');
+        }
+    </script>
+</body>
+</html>
